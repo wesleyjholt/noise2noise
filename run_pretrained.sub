@@ -1,0 +1,7 @@
+#!/bin/sh -l
+
+module load conda
+cd $SLURM_SUBMIT_DIR
+source activate ./venv
+
+python config.py validate --dataset-dir=datasets/bsd300 --noise=gaussian --network-snapshot=pretrained/network_final-gaussian-n2n.pickle
